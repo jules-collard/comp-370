@@ -19,6 +19,7 @@ def main():
 
     data = pd.read_csv(args.input)
     data['created_date'] = pd.to_datetime(data['created_date'])
+    data['closed_date'] = pd.to_datetime(data['closed_date'])
     data = data[(data["created_date"] > start_date) & (data["created_date"] < end_date)]
 
     summary = data.groupby(['complaint_type', 'borough']).size()
@@ -27,3 +28,6 @@ def main():
     
 if __name__ == "__main__":
     main()
+
+# Sample CLI command:
+# python scripts/borough_complaints.py -s "2/1/2020" -e "3/1/2020" -i data/nyc_311_2020.csv -o output/borough_complaints.csv

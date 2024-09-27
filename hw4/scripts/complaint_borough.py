@@ -18,14 +18,26 @@ def main():
     end_date = pd.to_datetime(args.end)
 
     data = pd.read_csv(args.input)
+    data = clean_borough_complaints(data)
+
+    save_borough_complaints_summary(data, start_date, end_date, args.output)
+
+def save_borough_complaints_summary(data, start_date, end_date, output):
+    data = data[(data["created_date"] > start_date) & (data["created_date"] < end_date)]
+    summary = data.groupby(['complaint_type', 'borough']).size()
+    summary.to_csv(output)
+
+def get_borough_complaints_summary(data, start_date, end_date):
+    data = data[(data["created_date"] > start_date) & (data["created_date"] < end_date)]
+    summary = data.groupby(['complaint_type', 'borough']).size()
+    return summary
+
+def clean_borough_complaints(data):
     data['created_date'] = pd.to_datetime(data['created_date'])
     data['closed_date'] = pd.to_datetime(data['closed_date'])
-    data = data[(data["created_date"] > start_date) & (data["created_date"] < end_date)]
+    data = data[data['closed_date'] < data['created_date']]
+    return data
 
-    summary = data.groupby(['complaint_type', 'borough']).size()
-    summary.to_csv(args.output)
-
-    
 if __name__ == "__main__":
     main()
 

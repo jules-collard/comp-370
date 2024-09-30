@@ -1,0 +1,2 @@
+1. A staff member in charge of medication stock management wants to knopw how much of each medication they should requisition for the next shipment.
+2. Real world data is seldom in a format allowing us to answer our question easily. Properly collecting, cleaning and annotating real-world data can introduce a lot of complexity in our code.

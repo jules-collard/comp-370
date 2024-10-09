@@ -23,3 +23,6 @@ def main():
 
         with open(filename, "w") as f:
             json.dump(news, f)
+
+if __name__ == "__main__":
+    main()

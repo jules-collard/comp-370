@@ -29,7 +29,7 @@ def get_trending(download=False, filename="frontpage.html"):
     
     headlines = soup.find_all("h3", attrs={"class":"article-card_headline"})
     for h in headlines:
-        print(h.text)
+        print(h["href"])
 
 
 if __name__ == "__main__":

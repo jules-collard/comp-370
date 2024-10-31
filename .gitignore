@@ -3,3 +3,4 @@ data/
 output/
 __pycache__/
 hw6/newscover/tests/test_secrets.json
+.DS_Store

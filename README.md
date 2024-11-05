@@ -1,2 +1,2 @@
 # COMP 370: Introduction to Data Science
-Projects for COMP 370 (Introduction to Data Science) at McGill University
+Projects for COMP 370 (Introduction to Data Science) at McGill University with Prof. Derek Ruths.

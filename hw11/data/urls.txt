@@ -1,0 +1,6 @@
+https://www.reddit.com/r/baseball/new.json?limit=100
+https://www.reddit.com/r/mlb/new.json?limit=100
+https://www.reddit.com/r/fantasybaseball/new.json?limit=100
+https://www.reddit.com/r/collegebaseball/new.json?limit=100
+https://www.reddit.com/r/dodgers/new.json?limit=100
+https://www.reddit.com/r/nyyankees/new.json?limit=100
